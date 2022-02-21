@@ -1,0 +1,16 @@
+1.Creating a account in firebase and adding a project  
+    -Create a project and  than open project settings scroll to bottom and clikc the HTML tag.
+    -Write the name and check the firebase hosting option click register app
+    -there are 4 steps igonre 2 step and Install the firebase with the cli command in vsode which is step three
+    -hit next and then hit continue to console.
+    -Now,scroll and under SDK setup and configuration click on config
+    -Copy the code under that and create a file in src folder named firebase.js and paste the code inside that.
+
+
+2.The clean up process:-
+  Delete:- App.test.js,logo.svgand steup.js
+
+3.Designing:-
+    new way to center the div horizontally and vertically 
+    display: grid;
+    place-items: center;
