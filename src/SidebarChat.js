@@ -2,7 +2,6 @@ import { Avatar } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import './sidebarChat.css'
 function SidebarChat({addNewChat}) {
-    console.log(addNewChat)
     const [avatarImg,setAvatarImg]=useState('')
     useEffect(()=>{
         setAvatarImg(Math.floor(Math.random()*5000))

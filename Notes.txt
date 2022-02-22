@@ -24,3 +24,8 @@ npm install @material-ui/core
 install material UI
 It will install all of the materila UI dependencies
 It already has css componets so it is fast to make good loking websites
+
+5.Installing firebase:-
+npm i firebase(it will download all the firebase dependencies)
+
+6.Creating a database in database

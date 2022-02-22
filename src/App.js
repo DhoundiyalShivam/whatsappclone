@@ -1,6 +1,6 @@
 import './App.css';
 import Sidebar from './Sidebar';
-
+import Chat from './Chat.js'
 function App() {
   return (
     //BEM naming convention
@@ -8,6 +8,7 @@ function App() {
     <div className="app">
      <div className='appBody'>
      <Sidebar />
+     <Chat/>
      </div>
     </div>
     </>
