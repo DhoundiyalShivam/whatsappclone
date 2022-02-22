@@ -14,3 +14,13 @@
     new way to center the div horizontally and vertically 
     display: grid;
     place-items: center;
+    flex:0.35;//to give the width
+        min-width: 10vw;// to give the space between the icons of header top
+    wrap the icons inside IconButton to give the hiver effect
+
+4.Materila UI:-
+Go to material UI website
+npm install @material-ui/core
+install material UI
+It will install all of the materila UI dependencies
+It already has css componets so it is fast to make good loking websites
