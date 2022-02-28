@@ -6,16 +6,34 @@ import ChatIcon from '@material-ui/icons/Chat';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { SearchOutlined } from '@material-ui/icons';
 import SidebarChat from './SidebarChat';
-// import db from './firebase.js'
+import db from './firebase.js'
+
+import { doc, onSnapshot, collection, query } from "firebase/firestore";
 function Sidebar() {
-    
-    // const [rooms, setRooms] = useState([])
+    // console.log(db.collection('rooms'))
+    const [rooms, setRooms] = useState([])
     // useEffect(() => {
     //     db.collection('rooms').onSnapshot(snapshot => (setRooms(snapshot.docs.map(doc => ({
     //         id: doc.id,
     //         data: doc.data()
     //     })))))
+    // console.log(rooms)
+
     // }, [])
+
+    useEffect(() => {
+        const q = query(collection(db, "rooms"))
+        // const unsub = onSnapshot(q, (querySnapshot) => {
+        //   console.log("Data", querySnapshot.docs.map(d =>     ({
+        //     id: d.id,
+        //     data: d.data()
+        // })));
+        // });
+        onSnapshot(q,(querySnapshot)=>{
+            console.log("data",querySnapshot.docs.map(d=>(d.data())))
+        })
+      }, [])
+
     return (
         <div className='sidebar'>
             {/* <h1>SidebAr</h1> */}
