@@ -8,7 +8,7 @@ import { SearchOutlined } from '@material-ui/icons';
 import SidebarChat from './SidebarChat';
 import db from './firebase.js'
 
-import { doc, onSnapshot, collection, query } from "firebase/firestore";
+import { onSnapshot, collection, query } from "firebase/firestore";
 function Sidebar() {
     // console.log(db.collection('rooms'))
     const [rooms, setRooms] = useState([])
@@ -29,10 +29,14 @@ function Sidebar() {
         //     data: d.data()
         // })));
         // });
-        onSnapshot(q,(querySnapshot)=>{
-            console.log("data",querySnapshot.docs.map(d=>(d.data())))
+        onSnapshot(q, (querySnapshot) => {
+            // console.log("data",querySnapshot.docs.map(d=>(d.data())))
+            (setRooms(querySnapshot.docs.map(data => ({
+                id: data.id,
+                data: data.data()
+            }))))
         })
-      }, [])
+    }, [])
 
     return (
         <div className='sidebar'>
@@ -59,10 +63,10 @@ function Sidebar() {
             </div>
             <div className='sidebarChats'>
                 <SidebarChat addNewChat />
-                <SidebarChat />
-                <SidebarChat />
-                <SidebarChat />
-                <SidebarChat />
+               {rooms.map(room=>
+                   <SidebarChat key={room.id} id={room.id} name={room.data.name}/>
+               )} 
+               
             </div>
 
 
