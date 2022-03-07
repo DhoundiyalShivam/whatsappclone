@@ -2,9 +2,11 @@ import { Avatar, IconButton } from '@material-ui/core';
 import { AttachFile, InsertEmoticon, Mic, SearchOutlined } from '@material-ui/icons';
 import MoreVert from '@material-ui/icons/MoreVert';
 import React, { useState } from 'react'
+import { useParams } from 'react-router-dom';
 import './Chat.css'
 function Chat(){
     const [input,setInput]=useState("")
+    const {roomId} =useParams()
     const sendMessage=(e)=>{
         e.preventDefault()
         console.log(input)
