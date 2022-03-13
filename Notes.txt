@@ -30,3 +30,7 @@ npm i firebase(it will download all the firebase dependencies)
 
 6.Creating a database in database
 7.Instead of getting the room name from the  firesbase I have written my own logic 
+8.We need to enable the google auth from the  firebase
+9.Enable google authentication from firebase authentication tab
+
+redux :-

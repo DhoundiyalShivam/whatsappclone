@@ -1,7 +1,8 @@
 //This is to connect the database with the our app
-// import firebase from 'firebase';
+// import {firebase} from 'firebase';
+import {GoogleAuthProvider } from "firebase/auth";
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore'
+import { getFirestore} from 'firebase/firestore'
 const firebaseConfig = {
      apiKey: "AIzaSyCAbQjPoJh3QuLcnubpN-WRMacedTyNVuU",
     authDomain: "whats-app-clone-91040.firebaseapp.com",
@@ -14,5 +15,8 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+// const auth =getAuth()
+const provider = new GoogleAuthProvider();
+export {auth,provider}
 
 export default db;

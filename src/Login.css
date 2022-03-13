@@ -16,8 +16,11 @@
     margin-bottom: 2rem;
 }
 .loginButton{
-    text-transform: inherit !important;
+    text-transform: inherit !important; /*it will show the text as it is written it was capitalized due to material  UI button */
     background-color: #0a8d48 !important;
     color: white !important;
     margin-top: 2rem !important;
+    padding-left:1rem !important;
+    padding-right:1rem !important;
+
 }
