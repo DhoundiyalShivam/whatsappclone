@@ -12,6 +12,7 @@ import { onSnapshot, collection, query } from "firebase/firestore";
 function Sidebar() {
     // console.log(db.collection('rooms'))
     const [rooms, setRooms] = useState([])
+   
     // useEffect(() => {
     //     db.collection('rooms').onSnapshot(snapshot => (setRooms(snapshot.docs.map(doc => ({
     //         id: doc.id,
@@ -22,13 +23,13 @@ function Sidebar() {
     // }, [])
 
     useEffect(() => {
-        const q = query(collection(db, "rooms"))
         // const unsub = onSnapshot(q, (querySnapshot) => {
         //   console.log("Data", querySnapshot.docs.map(d =>     ({
         //     id: d.id,
         //     data: d.data()
         // })));
         // });
+        const q = query(collection(db, "rooms"))
         onSnapshot(q, (querySnapshot) => {
             // console.log("data",querySnapshot.docs.map(d=>(d.data())))
             (setRooms(querySnapshot.docs.map(data => ({
@@ -63,10 +64,10 @@ function Sidebar() {
             </div>
             <div className='sidebarChats'>
                 <SidebarChat addNewChat />
-               {rooms.map(room=>
-                   <SidebarChat key={room.id} id={room.id} name={room.data.name}/>
-               )} 
-               
+                {rooms.map(room =>
+                    <SidebarChat key={room.id} id={room.id} name={room.data.name} />
+                )}
+
             </div>
 
 

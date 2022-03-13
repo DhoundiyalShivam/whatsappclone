@@ -2,11 +2,12 @@ import { Avatar } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import './sidebarChat.css'
 import db from './firebase.js'
-import { doc, setDoc } from "firebase/firestore";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc} from "firebase/firestore";
 import { Link } from 'react-router-dom';
+// import { onSnapshot, collection, query } from "firebase/firestore";
 function SidebarChat({ addNewChat, name, id }) {
     const [avatarImg, setAvatarImg] = useState('')
+ 
     useEffect(() => {
         setAvatarImg(Math.floor(Math.random() * 5000))
     }, [])
@@ -22,15 +23,15 @@ function SidebarChat({ addNewChat, name, id }) {
 
         }
     }
-    return !addNewChat ?( <Link to={`rooms/${id}`}>
-        
-        <div className='sidebarChat'>
-            <Avatar src={`https://avatars.dicebear.com/api/human/${avatarImg}.svg`} />
-            <div className='sidebarChatInfo'>
-                <h2>{name}</h2>
-                <p>Last message...</p>
+    return !addNewChat ?
+        (<Link to={`rooms/${id}`}>
+            <div className='sidebarChat'>
+                <Avatar src={`https://avatars.dicebear.com/api/human/${avatarImg}.svg`} />
+                <div className='sidebarChatInfo'>
+                    <h2>{name}</h2>
+                    <p>Last message...</p>
+                </div>
             </div>
-        </div>
         </Link>) : (<div onClick={createChat} className="sidebarChat">
 
             <h2>Add new Chat</h2>
