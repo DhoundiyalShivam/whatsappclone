@@ -2,8 +2,11 @@ import React from 'react'
 import { Button } from "@material-ui/core"
 import "./Login.css"
 import {provider } from './firebase'
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup} from "firebase/auth";
+import { actionTypes } from './Reducer';
+import { useStateValue } from './StateProvider';
 const Login = () => {
+    const [{},dispatch] =useStateValue();
     const signIn = () => {
         console.log("Sign IN")
         // auth.signInWithPopup(provider)
@@ -11,7 +14,13 @@ const Login = () => {
         // .catch(error=>alert(error)))
         const auth = getAuth();
 signInWithPopup(auth, provider)
-.then((result)=>console.log(result))
+.then((result)=>{
+    console.log(result)
+    dispatch({
+        type: actionTypes.SET_USER,
+        user:result.user,
+    })
+})
 .catch((err)=>alert(err))
     }
     return (

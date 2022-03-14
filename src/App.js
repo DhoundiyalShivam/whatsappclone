@@ -9,8 +9,11 @@ import Sidebar from './Sidebar';
 import Chat from './Chat.js'
 import Page404 from "./Page404";
 import Login from "./Login";
+import { useStateValue } from "./StateProvider";
 function App() {
-  const [user,setUser]=useState(null)
+  // const [user,setUser]=useState(null)
+  const [{user},dispatch] =useStateValue()
+  console.log({user})
   return (
     //BEM naming convention
     <>
