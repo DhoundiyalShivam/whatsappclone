@@ -12,7 +12,9 @@ import Login from "./Login";
 import { useStateValue } from "./StateProvider";
 function App() {
   // const [user,setUser]=useState(null)
-  const [{user},dispatch] =useStateValue()
+  // const [{user},dispatch] =useStateValue()
+  const [{user}] =useStateValue()
+
   console.log({user})
   return (
     //BEM naming convention
@@ -25,7 +27,7 @@ function App() {
           <Routes>
           {/* <Route path="/" element={<Sidebar />} /> */}
             <Route path="/rooms/:roomId" element={<Chat />} />
-            <Route path="*" element={<Page404 />} />
+            {/* <Route path="*" element={<Page404 />} /> */}
 
           </Routes>
         </BrowserRouter>
