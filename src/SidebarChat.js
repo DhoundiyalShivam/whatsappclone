@@ -13,8 +13,6 @@ function SidebarChat({ addNewChat, name, id }) {
     const createChat = async () => {
         const roomName = prompt("please enter name for chat")
         if (roomName) {
-            console.log(roomName)
-
             await addDoc(collection(db, "rooms"), {
                 name: roomName
             });

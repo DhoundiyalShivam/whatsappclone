@@ -31,7 +31,6 @@ function Chat() {
     }, [roomId])
     const sendMessage = (e) => {
         e.preventDefault()
-        console.log(input)
         setInput('')
         setMessages([...messages,{
                           message:input,
@@ -40,7 +39,6 @@ function Chat() {
         }])
 
     }
-    console.log(messages)
     return (
         <div className='chat'>
             <div className='chatHeader'>

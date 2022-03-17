@@ -14,7 +14,6 @@ function App() {
 
   const [{user}] =useStateValue()
 
-  console.log({user})
   return (
     //BEM naming convention
     <>

@@ -8,14 +8,9 @@ import { useStateValue } from './StateProvider';
 const Login = () => {
     const [{},dispatch] =useStateValue();
     const signIn = () => {
-        console.log("Sign IN")
-        // auth.signInWithPopup(provider)
-        // .then(result => console.log(result)
-        // .catch(error=>alert(error)))
         const auth = getAuth();
 signInWithPopup(auth, provider)
 .then((result)=>{
-    console.log(result)
     dispatch({
         type: actionTypes.SET_USER,
         user:result.user,
