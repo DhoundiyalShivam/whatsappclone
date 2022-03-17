@@ -9,29 +9,16 @@ import SidebarChat from './SidebarChat';
 import db from './firebase.js'
 
 import { onSnapshot, collection, query } from "firebase/firestore";
+import { useStateValue } from './StateProvider';
 function Sidebar() {
-    // console.log(db.collection('rooms'))
+  const [{user}] =useStateValue()
     const [rooms, setRooms] = useState([])
-   
-    // useEffect(() => {
-    //     db.collection('rooms').onSnapshot(snapshot => (setRooms(snapshot.docs.map(doc => ({
-    //         id: doc.id,
-    //         data: doc.data()
-    //     })))))
-    // console.log(rooms)
-
-    // }, [])
+ 
 
     useEffect(() => {
-        // const unsub = onSnapshot(q, (querySnapshot) => {
-        //   console.log("Data", querySnapshot.docs.map(d =>     ({
-        //     id: d.id,
-        //     data: d.data()
-        // })));
-        // });
+     
         const q = query(collection(db, "rooms"))
         onSnapshot(q, (querySnapshot) => {
-            // console.log("data",querySnapshot.docs.map(d=>(d.data())))
             (setRooms(querySnapshot.docs.map(data => ({
                 id: data.id,
                 data: data.data()
@@ -41,9 +28,8 @@ function Sidebar() {
 
     return (
         <div className='sidebar'>
-            {/* <h1>SidebAr</h1> */}
             <div className='sidebarHeader'>
-                <Avatar />
+                <Avatar src={user?.photoURL} /> {/* this is optional chaining as user will be null at first and after login it will load */}
                 <div className='sidebarHeaderRight'>
                     <IconButton>
                         <DonutLargeIcon />

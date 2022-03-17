@@ -1,13 +1,14 @@
 .sidebar{
-    /* display: flex; */
     flex:0.35;
     flex-direction: column;
+    background-color: white;
 }
 .sidebarHeader{
     display: flex;
     justify-content: space-between;
     padding: 20px;
     border-right: 1px solid lightgrey;
+    background-color: #ededed;
 }
 .sidebarHeaderRight{
     display: flex;
@@ -15,10 +16,11 @@
     justify-content: space-between;
     min-width: 10vw;
 }
-/* .sidebarHeader> .MuiSvgIcon-root{
-    margin-right:2vw;
-    font-size:24px !important
-} */
+
+a{
+    text-decoration: none;
+    color: #000;
+}
 .sidebarSearch{
     display: flex;
     align-items: center;

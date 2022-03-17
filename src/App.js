@@ -11,8 +11,7 @@ import Page404 from "./Page404";
 import Login from "./Login";
 import { useStateValue } from "./StateProvider";
 function App() {
-  // const [user,setUser]=useState(null)
-  // const [{user},dispatch] =useStateValue()
+
   const [{user}] =useStateValue()
 
   console.log({user})
@@ -25,9 +24,7 @@ function App() {
         <BrowserRouter>
         <Sidebar/>
           <Routes>
-          {/* <Route path="/" element={<Sidebar />} /> */}
             <Route path="/rooms/:roomId" element={<Chat />} />
-            {/* <Route path="*" element={<Page404 />} /> */}
 
           </Routes>
         </BrowserRouter>

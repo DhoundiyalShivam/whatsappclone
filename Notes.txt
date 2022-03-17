@@ -37,3 +37,5 @@ ContextApi/redux :-
 
 we wrap the <App/ > with <StateProvider>
 StateProvider acts as the data layer(we push info to the data layer so that we can use it to overcome propsdrilling)
+
+6. Messsage in the firebase :- add message to the each room
