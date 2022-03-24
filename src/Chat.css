@@ -41,7 +41,7 @@
     border-radius: 10px;
     background-color: #ffffff;
     margin-bottom: 30px;
-    word-wrap: break-word;
+    word-break: break-word;
 }
 .chatReciever{
     margin-left: auto;/* To align all to left   */
